@@ -1,0 +1,62 @@
+{% extends 'machine/base.html' %}
+
+
+	{% block content %}
+	<div class="container mt-5">
+		<form action="" method="POST">
+			{% csrf_token %}
+
+			<div class="form-group">
+			    <label for="name">Name</label>
+			    <input type="text" step="any" class="form-control" name="name">
+			</div>
+
+			<div class="form-group">
+			    <label for="surname">Surname</label>
+			    <input type="text" step="any" class="form-control" name="surname">
+			</div>
+
+		  	<div class="form-group">
+			    <label for="mean_radius">Mean Radius</label>
+			    <input type="number" step="any" class="form-control" name="mean_radius">
+			</div>
+
+			<div class="form-group">
+			    <label for="mean_texture">mean_texture</label>
+			    <input type="number" step="any" class="form-control" name="mean_texture">
+			</div>
+
+			<div class="form-group">
+			    <label for="mean_perimeter">mean_perimeter</label>
+			    <input type="number" step="any" class="form-control" name="mean_perimeter">
+			</div>
+
+			<div class="form-group">
+			    <label for="mean_area">mean_area</label>
+			    <input type="number" step="any" class="form-control" name="mean_area">
+			</div>
+
+			<div class="form-group">
+			    <label for="mean_smoothness">mean_smoothness</label>
+			    <input type="number" step="any" class="form-control" name="mean_smoothness">
+			</div>
+
+			<button class="btn btn-info btn-block">Submit</button>
+		</form>
+		<div class="container mt-3">
+
+   				 {% for message in messages %}
+
+	   				 	<div class=" alert alert-{{message.level_tag}}" role="alert">
+	   				 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    	<span aria-hidden="true">&times;</span>
+						 	 </button>
+						  <h2 class="bg-faded font-weight-bold">{{message}}</h2>
+						</div>
+   				 {% endfor %}
+   				
+		</div>
+		
+	</div>
+
+	{% endblock %}
