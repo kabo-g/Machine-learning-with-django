@@ -1,1 +1,1 @@
-web:gunicorn ml.wsgi --log-file-
+web: gunicorn ml:app
