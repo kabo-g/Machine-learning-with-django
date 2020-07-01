@@ -8,7 +8,7 @@ import pandas as pd
 import os
 
 CURRENT_DIR = os.path.dirname(__file__)
-model_file = os.path.join(CURRENT_DIR, 'model/breast_cancer_model.pkl')
+model_file = os.path.join(CURRENT_DIR, 'model/gradient_breast_cancer_model.pkl')
 svm = joblib.load(model_file)
 
 
@@ -40,10 +40,10 @@ def site(request):
 		
 		checker = svm.predict(data)
 		if (checker == 1):
-			messages.warning(request, 'You have cancer seek medical help as soon as possible')
+			messages.warning(request, 'Malignant')
 
 		if (checker == 0):
-			messages.success(request, 'Good News!!! {-_-}. This is not cancer')
+			messages.success(request, 'Not cancerous')
 		if form.is_valid():
 			form.save()
 		else:
