@@ -8,7 +8,7 @@ import pandas as pd
 import os
 
 CURRENT_DIR = os.path.dirname(__file__)
-model_file = os.path.join(CURRENT_DIR, 'model/gradient_breast_cancer_model.pkl')
+model_file = os.path.join(CURRENT_DIR, 'model/breast_cancer_model.pkl')
 svm = joblib.load(model_file)
 
 
